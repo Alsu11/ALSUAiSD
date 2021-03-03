@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     std::list<int> list1  {2};
     int n;
-    cin >> n;
+    cin >> n; // вводим кол-во
     int i = 1;
     int k = 3;
     while(i != n) {
