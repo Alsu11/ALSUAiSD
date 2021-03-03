@@ -10,7 +10,7 @@ int main() {
     int k = 3;
     while(i != n) {
         bool f = true;
-        for(int a: list1) {
+        for(int a: list1) { // проходимся по листу
             if(k % a == 0) {
                 f = false;
                 break;
@@ -22,7 +22,7 @@ int main() {
         }
         k += 2;
     }
-    for(int a: list1) {
+    for(int a: list1) { // выводим числа
         cout << a << " ";
     }
     return 0;
