@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    std::list<int> list1  {2};
+    std::list<int> list1  {2}; // создаем лист
     int n;
     cin >> n; // вводим кол-во
     int i = 1;
