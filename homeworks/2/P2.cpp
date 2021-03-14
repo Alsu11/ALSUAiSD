@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 struct elem {
@@ -10,7 +10,7 @@ struct cycle {
     int len;
     int start;
 };
-
+*/
 // НАЧАЛО ФУНКЦИИ ДЛЯ СДАЧИ
 cycle find_cycle(elem* head) {
     cycle ans;
@@ -54,7 +54,7 @@ cycle find_cycle(elem* head) {
     return ans;
 }
 // КОНЕЦ ФУНКЦИИ ДЛЯ СДАЧИ
-
+/*
 elem* add(elem* head, int x) {
     elem* p = new elem;
     p->val = x;
@@ -80,3 +80,4 @@ int main() {
     cout << ans.start << " " << ans.len << endl;
     return 0;
 }
+*/
