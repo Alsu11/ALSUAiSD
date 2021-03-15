@@ -14,8 +14,8 @@ struct cycle {
 // НАЧАЛО ФУНКЦИИ ДЛЯ СДАЧИ
 cycle find_cycle(elem* head) {
     cycle ans;
-    ans.len=-1;
-    ans.start=-1;
+    //ans.len=-1;
+    //ans.start=-1;
     elem* ch = head;
     elem* z = head;
     bool c = false;
@@ -35,18 +35,23 @@ cycle find_cycle(elem* head) {
             z = z -> next;
         }
         z = head;
+        int s = 0;
         while (z != ch) {
             ch = ch->next;
             z = z->next;
+            s++;
         }
         ans.len = l;
-        ans.start = z->val;
+        ans.start = s;
+        //cout << ans.len <<"          oooooo         " << ans.start << " 'nj d wbrkt        ";
+        return ans;
     }
     if(!c) {
-        int r = 0;
+        int r = -1;
         z = head;
         while (z) {
             r++;
+            z -> next;
         }
         ans.start = r;
         ans.len = -1;
@@ -54,8 +59,8 @@ cycle find_cycle(elem* head) {
     return ans;
 }
 // КОНЕЦ ФУНКЦИИ ДЛЯ СДАЧИ
-
-/*elem* add(elem* head, int x) {
+/*
+elem* add(elem* head, int x) {
     elem* p = new elem;
     p->val = x;
     p->next = head;
@@ -77,7 +82,7 @@ int main() {
     }
 
     cycle ans = find_cycle(head);
-    cout << ans.start << " " << ans.len << endl;
+    cout << ans.start << " 'uuuuuuuuuuu" << ans.len << endl;
     return 0;
 }
 */
