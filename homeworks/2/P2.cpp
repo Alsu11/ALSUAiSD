@@ -19,7 +19,7 @@ cycle find_cycle(elem* head) {
     elem* ch = head;
     elem* z = head;
     bool c = false;
-    while (z -> next -> next && ch -> next) {
+    while (ch -> next && z -> next -> next) {
         ch = ch->next;
         z = z->next->next;
         if (ch == z) {
@@ -43,18 +43,16 @@ cycle find_cycle(elem* head) {
         }
         ans.len = l;
         ans.start = s;
-        //cout << ans.len <<"          oooooo         " << ans.start << " 'nj d wbrkt        ";
         return ans;
     }
     if(!c) {
-        int r = -1;
+        int r = 0;
         z = head;
         while (z) {
             r++;
             z -> next;
         }
         ans.start = r;
-        ans.len = -1;
     }
     return ans;
 }
@@ -82,7 +80,7 @@ int main() {
     }
 
     cycle ans = find_cycle(head);
-    cout << ans.start << " 'uuuuuuuuuuu" << ans.len << endl;
+    cout << ans.start << ans.len << endl;
     return 0;
 }
 */
