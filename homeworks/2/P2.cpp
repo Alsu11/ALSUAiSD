@@ -24,6 +24,8 @@ cycle find_cycle(elem* head) {
         z = z->next->next;
         if (ch == z) {
             c = true;
+        }
+        if(c) {
             break;
         }
     }
@@ -50,7 +52,7 @@ cycle find_cycle(elem* head) {
         z = head;
         while (z) {
             r++;
-            z -> next;
+            z = z -> next;
         }
         ans.start = r;
     }
@@ -70,7 +72,7 @@ int main() {
     cin >> k >> n;
     elem* head = NULL;
     head = add(head,0);
-    elem* p = head;
+    //elem* p = head;
     for (int i = 1; i < n; i++) {
         head = add(head, i);
     }
