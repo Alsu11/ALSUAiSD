@@ -14,7 +14,7 @@ struct cycle {
 // НАЧАЛО ФУНКЦИИ ДЛЯ СДАЧИ
 cycle find_cycle(elem* head) {
     cycle ans;
-    ans.len=-1;
+    ans.len=0;
     ans.start=-1;
     elem* ch = head;
     elem* z = head;
@@ -53,7 +53,7 @@ cycle find_cycle(elem* head) {
             r++;
             head = head -> next;
         }
-        ans.start = r;
+        ans.len = r;
     }
     return ans;
 }
