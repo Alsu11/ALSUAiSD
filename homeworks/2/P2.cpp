@@ -19,7 +19,7 @@ cycle find_cycle(elem* head) {
     elem* ch = head;
     elem* z = head;
     bool c = false;
-    while ((ch -> next && z -> next -> next) || head) {
+    while (head && ch -> next && z -> next -> next) {
         ch = ch->next;
         z = z->next->next;
         if (ch == z) {
@@ -49,9 +49,9 @@ cycle find_cycle(elem* head) {
     }
     if(!c) {
         int r = 0;
-        z = head;
-        while (z -> next) {
+        while (head && head -> next) {
             r++;
+            head = head -> next;
         }
         ans.start = r;
     }
