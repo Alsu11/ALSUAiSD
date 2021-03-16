@@ -48,7 +48,7 @@ cycle find_cycle(elem* head) {
         return ans;
     }
     if(!c && head) {
-        int r = 0;
+        int r = 1;
         while (head -> next) {
             r++;
             head = head -> next;
@@ -71,7 +71,11 @@ int main() {
     cin >> k >> n;
     elem* head = NULL;
     head = add(head,0);
-    elem* p = head;
+    head = add(head,1);
+    head = add(head,2);
+    head = add(head,3);
+
+  /*  elem* p = head;
     for (int i = 1; i < n; i++) {
         head = add(head, i);
     }
