@@ -80,7 +80,7 @@ int main() {
     }
 
     cycle ans = find_cycle(head);
-    cout << ans.start << ans.len << endl;
+    cout << ans.start << " " << ans.len << endl;
     return 0;
 }
 */
