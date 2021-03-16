@@ -37,7 +37,7 @@ cycle find_cycle(elem* head) {
             z = z -> next;
         }
         z = head;
-        int s = 1;
+        int s = 0;
         while (z != ch) {
             ch = ch->next;
             z = z->next;
