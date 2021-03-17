@@ -20,7 +20,7 @@ cycle find_cycle(elem* head) {
     elem* z = head;
     bool c = false;
     if(head == NULL) {
-        ans.len = 0;
+        ans.start = 0;
         return ans;
     }
     while (ch -> next && z -> next -> next) {
@@ -53,13 +53,13 @@ cycle find_cycle(elem* head) {
         }
     }
     if(!c) {
-        int r = 1;
+        int r = 0;
         elem* elem = head;
         while (elem) {
             r++;
             elem = elem -> next;
         }
-        ans.len = r;
+        ans.start = r;
     }
     return ans;
 }
