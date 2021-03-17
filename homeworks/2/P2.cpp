@@ -23,12 +23,21 @@ cycle find_cycle(elem* head) {
         ans.start = 0;
         return ans;
     }
-    while (ch -> next && z -> next -> next) {
+    while (ch -> next) {
         if(ch->next) {
             ch = ch->next;
         }
-        if(z->next->next) {
-            z = z->next->next;
+        else {
+            break;
+        }
+        if(z -> next) {
+            if (z->next->next) {
+                z = z->next->next;
+            } else {
+                break;
+            }
+        } else {
+            break;
         }
         if (ch == z) {
             c = true;
@@ -79,9 +88,9 @@ int main() {
     head = add(head,0);
     head = add(head,1);
     head = add(head,2);
-    head = add(head,3);
+    //head = add(head,3);
 
-    elem* p = head;
+    /*elem* p = head;
     for (int i = 1; i < n; i++) {
         head = add(head, i);
     }
