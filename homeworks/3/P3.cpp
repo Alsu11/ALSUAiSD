@@ -1,25 +1,24 @@
 #include <cstring>
 #include <iostream>
 #include <string>
-#include <stack>
 
 using namespace std;
 
 struct elem {
     char val;
-    elem* next;
+    elem *next;
 };
 
 // & - чтобы можно было менять аргумент
 // (передача по ссылке)
-void push(elem*& head, char n) {
+void push(elem *&head, char n) {
     elem *p = new elem;
     p->val = n;
     p->next = head;
     head = p;
 }
 
-char pop(elem*& head) {
+char pop(elem *&head) {
     elem *p = head;
     head = head->next;
     char n = p->val;
@@ -27,25 +26,25 @@ char pop(elem*& head) {
     return n;
 }
 
-char peek(elem*& head) {
-    return head -> val;
+char peek(elem *&head) {
+    return head->val;
 }
 
-bool empty(elem* head) {
+bool empty(elem *head) {
     return head == NULL;
 }
 
 int priority(char c) {
-    if (c == '+' || c =='-') {
+    if (c == '+' || c == '-') {
         return 1;
     }
-    if(c == '*' || c == '/') {
+    if (c == '*' || c == '/') {
         return 2;
     }
     return 0;
 }
 
-string compute(int n, const char* const s) {
+string compute(int n, const char *const s) {
     elem *head = NULL;
     string str;
     char number[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
@@ -84,7 +83,7 @@ string compute(int n, const char* const s) {
             }
         }
     }
-    while(!empty(head)) {
+    while (!empty(head)) {
         str.push_back(pop(head));
         str.push_back(' ');
     }
@@ -93,7 +92,7 @@ string compute(int n, const char* const s) {
 
 int main() {
     string s;
-    getline(cin,s);
+    getline(cin, s);
     int n = strlen(s.c_str());
     cout << compute(n, s.c_str());
     return 0;
