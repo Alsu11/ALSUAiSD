@@ -124,6 +124,6 @@ int main() {
     string s;
     getline(cin,s);
     int n = strlen(s.c_str());
-    compute(n, s.c_str());
+    cout << compute(n, s.c_str());
     return 0;
 }
