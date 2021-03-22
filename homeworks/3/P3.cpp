@@ -4,6 +4,7 @@
 #include <stack>
 
 using namespace std;
+
 struct elem {
     char val;
     elem* next;
@@ -18,7 +19,7 @@ void push(elem*& head, char n) {
     head = p;
 }
 
-int pop(elem*& head) {
+char pop(elem*& head) {
     elem *p = head;
     head = head->next;
     char n = p->val;
@@ -27,8 +28,8 @@ int pop(elem*& head) {
 }
 
 char peek(elem*& head) {
-    elem *p = head;
-    return p -> val;
+    // elem *p = head;
+    return head -> val;
 }
 
 bool empty(elem* head) {
@@ -59,34 +60,63 @@ char order(elem*& head) {
     return c_out;
 }
 
-void compute(int n, const char* const s) {
+int priority(char c) {
+    // char c_down = peek(head); // берем внешний
+    if (c == '+' || c =='-') {
+        return 1;
+    }
+    if(c == '*' || c == '/') {
+        return 2;
+    }
+    return 0;
+}
+
+string compute(int n, const char* const s) {
     elem *head = NULL;
+    string str;
     char number[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     for (int i = 0; i < n; i++) {
         bool is_number = false;
-        // cout << "now: " << s[i] << " ";
         for (int j = 0; j < 10; j++) {
             if (s[i] == number[j]) {
-                cout << number[j] << " ";
+                str.push_back(s[i]);
+                str.push_back(' ');
                 is_number = true;
                 break;
             }
         }
-        if (s[i] != ')' && !is_number) {
-            push(head, s[i]);
-        }
-        if (s[i] == ')') {
-            while (head && peek(head) != '(') {
-                cout << order(head) << " ";
-            }/*
-            if(peek(head) == '(' && ) {
-                pop (head);
-            }*/
+        if (!is_number) {
+            bool sk = false;
+            if (s[i] == '(') {
+                sk = true;
+                push(head, s[i]);
+            }
+            if (s[i] == ')') {
+                sk = true;
+                while (peek(head) != '(') {
+                    str.push_back(peek(head));
+                    str.push_back(' ');
+                    pop(head);
+                }
+                if(peek(head) == '(') {
+                    pop(head);
+                }
+            }
+            if (!sk) {
+                while (!empty(head) && priority(peek(head)) >= priority(s[i])) {
+                    str.push_back(peek(head));
+                    str.push_back(' ');
+                    pop(head);
+                }
+                push(head, s[i]);
+            }
         }
     }
-    while (!empty(head)) {
-        cout << order(head) << " ";
+    while(!empty(head)) {
+        str.push_back(pop(head));
+        str.push_back(' ');
     }
+    return str;
 }
 
 int main() {
@@ -95,6 +125,5 @@ int main() {
     getline(cin,s);
     int n = strlen(s.c_str());
     compute(n, s.c_str());
-    //cout << compute(n, s.c_str()) << endl;
     return 0;
 }
