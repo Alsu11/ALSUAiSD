@@ -28,7 +28,6 @@ char pop(elem*& head) {
 }
 
 char peek(elem*& head) {
-    // elem *p = head;
     return head -> val;
 }
 
@@ -36,32 +35,7 @@ bool empty(elem* head) {
     return head == NULL;
 }
 
-char order(elem*& head) {
-    char c_out = pop(head);
-    if(head) {
-        char c_in = pop(head);
-        if((c_out == '+' || c_out == '-') && (c_in == '*' || c_in == '/')) {
-            push(head, c_out);
-            return c_in;
-        }
-        if((c_out == '*' || c_out == '/') && (c_in == '*' || c_out == '/')) {
-            push(head, c_in);
-            return c_out;
-        }
-        if((c_in == '+' || c_in == '-') && (c_out == '*' || c_in == '/')) {
-            push(head, c_in);
-            return c_out;
-        }
-        if((c_out == '+' || c_out == '-') && (c_in == '+' || c_in == '-')) {
-            push(head, c_in);
-            return c_out;
-        }
-    }
-    return c_out;
-}
-
 int priority(char c) {
-    // char c_down = peek(head); // берем внешний
     if (c == '+' || c =='-') {
         return 1;
     }
@@ -98,9 +72,7 @@ string compute(int n, const char* const s) {
                     str.push_back(' ');
                     pop(head);
                 }
-                if(peek(head) == '(') {
-                    pop(head);
-                }
+                pop(head);
             }
             if (!sk) {
                 while (!empty(head) && priority(peek(head)) >= priority(s[i])) {
@@ -120,7 +92,6 @@ string compute(int n, const char* const s) {
 }
 
 int main() {
-    stack<int> stack;
     string s;
     getline(cin,s);
     int n = strlen(s.c_str());
