@@ -52,9 +52,7 @@ int main() {
                 --d;
                 k=c[d];
                 cnt++;
-                if(cnt >= max) {
-                    max = cnt;
-                }
+
                 // cout << "CUR:" << k << endl;
                 // добавляю все связанные
                 // вершины, где я не был
@@ -63,6 +61,9 @@ int main() {
                         c[d++]=i;
                         b[i]=true;
                     }
+                if(cnt >= max) {
+                    max = cnt;
+                }
 
             }
             // увеличиваю количество
@@ -70,6 +71,6 @@ int main() {
         }
     } while (!f);
     // вывод
-    cout << cnt << endl;
+    cout << max << endl;
     return 0;
 }
