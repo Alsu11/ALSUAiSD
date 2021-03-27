@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 using namespace std;
@@ -21,41 +20,27 @@ int main() {
     }
     int cnt = 0;
     int max = 0;
-    // посчитайте количество
-    // компонент связности
     for (int i=0; i<n; i++)
         b[i]=false;
     d = 0;
-    // есть ли ещё
-    // не пройденные вершины
     bool f = true;
     do {
         cnt = 0;
         f = true;
         int k=0;
         while (k<n && f) {
-            // cout << "T:" << k << " " << b[k] << endl;
             f &= b[k];
             k++;
         }
         k--;
         if (!f) {
-            // кладу в стэк
-            // cout << "ST: " << k << endl;
             c[d]=k;
             d++;
-            // помечаю вершину как пройденную
             b[k]=true;
-            // пока стэк не пуст
             while (d>0) {
-                // вытаскиваю вершину
                 --d;
                 k=c[d];
                 cnt++;
-
-                // cout << "CUR:" << k << endl;
-                // добавляю все связанные
-                // вершины, где я не был
                 for (int i=0;i<n;i++)
                     if(a[k][i] && !b[i]) {
                         c[d++]=i;
@@ -66,11 +51,8 @@ int main() {
                 }
 
             }
-            // увеличиваю количество
-            // компонент связности
         }
     } while (!f);
-    // вывод
     cout << max << endl;
     return 0;
 }
