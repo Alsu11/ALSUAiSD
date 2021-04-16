@@ -138,9 +138,9 @@ int main() {
         arr[i][2] = weight;
     }
     quick_Sort(arr,0,m-1);
-    for(int i=0;i<m;i++) {
+    /*for(int i=0;i<m;i++) {
         cout<<arr[i][0]+1<<" "<<arr[i][1]+1<<" "<<arr[i][2]<<endl;
-    }
+    }*/
 
      int s = 0;
      int k = 0;
@@ -151,7 +151,6 @@ int main() {
              k++;
          }
      }
-     // debug_print();
      if(k == n-1) {
          cout << s;
      } else {
