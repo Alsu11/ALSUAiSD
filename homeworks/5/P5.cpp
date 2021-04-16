@@ -151,7 +151,7 @@ int main() {
              k++;
          }
      }
-     debug_print();
+     // debug_print();
      if(k == n-1) {
          cout << s;
      } else {
