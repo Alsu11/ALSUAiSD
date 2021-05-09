@@ -27,7 +27,9 @@ int main() {
 
         cout << 6 << "\n";
         cout << 3 << "\n";
-        cout << "1 " << "2 "<<"3 " << "4 ";
+        for(int i = 1; i < 5; i++) {
+            cout << i << " ";
+        }
     }
 
     return 0;
