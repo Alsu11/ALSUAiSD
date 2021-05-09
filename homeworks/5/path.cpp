@@ -77,8 +77,8 @@ int main() {
         cout << -1;
     }
     else {
-        cout << len[t] << endl; // длина кротчайшего
-        cout << p.size() - 1 << endl; // количество ребер в пути
+        cout << len[t] << "\n"; // длина кротчайшего
+        cout << p.size() - 1 << "\n"; // количество ребер в пути
         for (int i = p.size() - 1; i >= 0; i--) {
             cout << p[i] + 1 << " ";
         }
