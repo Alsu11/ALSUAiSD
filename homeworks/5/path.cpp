@@ -10,7 +10,7 @@ struct adjacency {
 
 int main() {
     int n;
-    cin >> n; // вводим количетсов рёбер
+    cin >> n; // вводим количество рёбер
     vector<vector<adjacency>> list;
     for (int i = 0; i < n; i++) {
         int mi;
@@ -80,7 +80,8 @@ int main() {
         cout << len[t] << "\n"; // длина кротчайшего
         cout << p.size() - 1 << "\n"; // количество ребер в пути
         for (int i = p.size() - 1; i >= 0; i--) {
-            cout << p[i] + 1 << " ";
+            cout << p[i] + 1;
+            cout << " ";
         }
     }
     return 0;
