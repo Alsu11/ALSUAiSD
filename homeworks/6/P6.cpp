@@ -11,7 +11,7 @@ struct adjacency {
 int main() {
     int n;
     cin >> n; // вводим количетсов рёбер
-    vector<vector<adjacency>> list; // список смежности
+    vector<vector<adjacency>> list;
     for (int i = 0; i < n; i++) {
         int mi;
         cin >> mi; // вводим степень вершины
@@ -43,7 +43,7 @@ int main() {
         int ver = -1;
 
         for (int j = 0; j < n; j++) {
-            if ((ver == -1 || len[j] < len[ver]) && !wa[j]) {
+            if (!wa[j] && (ver == -1 || len[j] < len[ver])) {
                 ver = j;
             }
         }
@@ -66,16 +66,12 @@ int main() {
 
     vector <int> p;
 
-    bool f = true;
-    int i = s;
-    while(f) {
-        if(i == t) {
-            p.push_back(i);
-            f = false;
-        }
+    int i = t;
+    while(i != s) {
         p.push_back(i);
         i = pr[i];
     }
+    p.push_back(s);
 
     if (len[t] == 2147483647) {
         cout << -1;
@@ -83,7 +79,7 @@ int main() {
     else {
         cout << len[t] << endl; // длина кротчайшего
         cout << p.size() - 1 << endl; // количество ребер в пути
-        for (int i = 0; i < p.size(); i++) {
+        for (int i = p.size() - 1; i >= 0; i--) {
             cout << p[i] + 1 << " ";
         }
     }
