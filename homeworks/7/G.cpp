@@ -6,18 +6,15 @@ using namespace std;
 
 int main() {
     int n,s;
-   // cout << "количество номиналов\n";
     cin >> n;
-    //cout << " write s \n";
     cin >> s;
-    int inf = 10000;
+    int inf = 10000; // больше этого числа быть не может
     int tabl[n+1][s+1];
-    int wi [n+1];
+    int wi [n+1]; // здесь номиналы
     wi[0] = 0;
     tabl[0][0] = 0;
     for(int i = 1; i < n+1; i++) {
         int w;
-        //cout << "write wi \n";
         cin >> w;
         wi[i] = w;
         tabl[i][0] = 0;
@@ -25,18 +22,9 @@ int main() {
     for(int i = 1; i < s+1; i++) {
         tabl[0][i] = inf;
     }
-
+// заполняем табличку
     for(int i = 1; i < n+1; i++) {
         for(int j = 1; j < s+1; j++) {
-           /* if(j - wi[i] >= 0) {
-                if((tabl[i][j - wi[i]] + 1) < tabl[i -1][j]) {
-                    tabl[i][j] = tabl[i][j - wi[i]] + 1;
-                } else {
-                    tabl[i][j] = tabl[i - 1][j];
-                }
-            } else {
-                tabl[i][j] = tabl[i - 1][j];
-            }*/
            if(j - wi[i] >= 0 && (tabl[i][j - wi[i]] + 1) < tabl[i -1][j]) {
                tabl[i][j] = tabl[i][j - wi[i]] + 1;
            } else {
@@ -44,20 +32,14 @@ int main() {
            }
         }
     }
-    /*for(int i = 0; i < n +1; i++) {
-        for(int j = 0; j < s +1; j++) {
-            cout << tabl[i][j] << "  ";
-        }
-        cout << "new line \n";
-    }*/
-    int itog [n];
+
+    int itog [n]; // сюда записываем количество монет какого-то наминала
     int count = 0;
     for(int i = 0; i < n+1; i++) {
         itog[i]=0;
     }
     bool f = true;
-   //cout << " this numb "<< tabl[n][s] << "\n";
-    if(tabl[n][s] >= inf || tabl[n][s] <= -inf) {
+    if(tabl[n][s] == inf) {
         f = false;
     }
     int i = n;
@@ -72,15 +54,12 @@ int main() {
                 count++;
             }
         }
-
-    }
-
-    if(f) {
         cout << count << "\n";
         for(int i : itog) {
             cout << i << " ";
         }
-    } else {
+    }
+    else {
         cout << -1;
     }
     return 0;
