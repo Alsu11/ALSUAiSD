@@ -55,21 +55,25 @@ int main() {
         itog[i]=0;
     }
     bool f = true;
-   // cout << tabl[n][s];
+   //cout << " this numb "<< tabl[n][s] << "\n";
     if(tabl[n][s] == 2147483647 || tabl[n][s] == -2147483648) {
         f = false;
     }
     int i = n;
     int j = s;
-    while (f || tabl[i][j] != 0) {
-        if(tabl[i][j] == tabl[i - 1][j]) {
-            i--;
-        } else {
-            j = j - wi[i];
-            itog[i-1]++;
-            count++;
+    if(f) {
+        while (tabl[i][j] != 0) {
+            if(tabl[i][j] == tabl[i - 1][j]) {
+                i--;
+            } else {
+                j = j - wi[i];
+                itog[i-1]++;
+                count++;
+            }
         }
+
     }
+
     if(f) {
         cout << count << "\n";
         for(int i : itog) {
