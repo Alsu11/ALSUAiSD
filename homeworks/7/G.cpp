@@ -10,6 +10,7 @@ int main() {
     cin >> n;
     //cout << " write s \n";
     cin >> s;
+    int inf = 10000;
     int tabl[n+1][s+1];
     int wi [n+1];
     wi[0] = 0;
@@ -22,7 +23,7 @@ int main() {
         tabl[i][0] = 0;
     }
     for(int i = 1; i < s+1; i++) {
-        tabl[0][i] = 2147483647;
+        tabl[0][i] = inf;
     }
 
     for(int i = 1; i < n+1; i++) {
@@ -55,8 +56,8 @@ int main() {
         itog[i]=0;
     }
     bool f = true;
-   //cout << " this numb "<< tabl[n][s] << "\n";
-    if(tabl[n][s] == 2147483647 || tabl[n][s] <= -2147483647) {
+   cout << " this numb "<< tabl[n][s] << "\n";
+    if(tabl[n][s] >= inf || tabl[n][s] <= -inf) {
         f = false;
     }
     int i = n;
