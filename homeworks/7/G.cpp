@@ -47,7 +47,7 @@ int main() {
         for(int j = 0; j < s +1; j++) {
             cout << tabl[i][j] << "  ";
         }
-        cout << "\n";
+        cout << "new line \n";
     }*/
     int itog [n];
     int count = 0;
@@ -55,13 +55,13 @@ int main() {
         itog[i]=0;
     }
     bool f = true;
+   // cout << tabl[n][s];
+    if(tabl[n][s] == 2147483647 || tabl[n][s] < -2147483647) {
+        f = false;
+    }
     int i = n;
     int j = s;
-    while (tabl[i][j] != 0) {
-        if(tabl[n][s] == 2147483647) {
-            f = false;
-            break;
-        }
+    while (f && tabl[i][j] != 0) {
         if(tabl[i][j] == tabl[i - 1][j]) {
             i--;
         } else {
