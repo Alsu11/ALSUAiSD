@@ -55,12 +55,13 @@ int main() {
         itog[i]=0;
     }
     bool f = true;
-    if(tabl[n][s] == 2147483647) {
-        f = false;
-    }
     int i = n;
     int j = s;
     while (tabl[i][j] != 0) {
+        if(tabl[n][s] == 2147483647) {
+            f = false;
+            break;
+        }
         if(tabl[i][j] == tabl[i - 1][j]) {
             i--;
         } else {
