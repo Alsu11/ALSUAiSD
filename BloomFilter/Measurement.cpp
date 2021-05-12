@@ -17,7 +17,7 @@ struct BloomFilter {
 };
 
 class macroseconds;
-// хэш-функция 1
+// хэш-функция 1, передаем элементи разверность фильтра (чтобы не выйти за пределы массив)
 int HashFunction1(int element, int filtersize) {
     element = element * 100 / 345;
     while (element >= filtersize) {
