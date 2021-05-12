@@ -56,7 +56,7 @@ int main() {
     }
     bool f = true;
    //cout << " this numb "<< tabl[n][s] << "\n";
-    if(tabl[n][s] == 2147483647 || tabl[n][s] == -2147483648) {
+    if(tabl[n][s] == 2147483647 || tabl[n][s] <= -2147483647) {
         f = false;
     }
     int i = n;
