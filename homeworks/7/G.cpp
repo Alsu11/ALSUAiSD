@@ -56,7 +56,7 @@ int main() {
         itog[i]=0;
     }
     bool f = true;
-   cout << " this numb "<< tabl[n][s] << "\n";
+   //cout << " this numb "<< tabl[n][s] << "\n";
     if(tabl[n][s] >= inf || tabl[n][s] <= -inf) {
         f = false;
     }
