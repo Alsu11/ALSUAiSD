@@ -61,7 +61,7 @@ int main() {
     }
     int i = n;
     int j = s;
-    while (f && tabl[i][j] != 0) {
+    while (f || tabl[i][j] != 0) {
         if(tabl[i][j] == tabl[i - 1][j]) {
             i--;
         } else {
