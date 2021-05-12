@@ -50,6 +50,7 @@ int main() {
         cout << "\n";
     }*/
     int itog [n];
+    int count = 0;
     for(int i = 0; i < n+1; i++) {
         itog[i]=0;
     }
@@ -65,9 +66,11 @@ int main() {
         } else {
             j = j - wi[i];
             itog[i-1]++;
+            count++;
         }
     }
     if(f) {
+        cout << count << "\n";
         for(int i : itog) {
             cout << i << " ";
         }
