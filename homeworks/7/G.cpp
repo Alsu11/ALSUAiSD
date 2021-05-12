@@ -38,13 +38,10 @@ int main() {
     for(int i = 0; i < n+1; i++) {
         itog[i]=0;
     }
-    bool f = true;
-    if(tabl[n][s] == inf) {
-        f = false;
-    }
     int i = n;
     int j = s;
-    if(f) {
+
+    if(tabl[n][s] != inf) {
         while (tabl[i][j] != 0) {
             if(tabl[i][j] == tabl[i - 1][j]) {
                 i--;
