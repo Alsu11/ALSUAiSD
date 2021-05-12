@@ -56,7 +56,7 @@ int main() {
     }
     bool f = true;
    // cout << tabl[n][s];
-    if(tabl[n][s] >= 2147483647 || tabl[n][s] <= -2147483647) {
+    if(tabl[n][s] == 2147483647 || tabl[n][s] == -2147483648) {
         f = false;
     }
     int i = n;
