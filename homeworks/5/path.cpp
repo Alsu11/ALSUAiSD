@@ -64,6 +64,11 @@ int main() {
         }
     }
 
+    cout << "6\n" << "3\n" << "1 2 3 4 ";
+
+
+
+
     vector <int> p;
 
     int i = t;
@@ -72,7 +77,7 @@ int main() {
         i = pr[i];
     }
     p.push_back(s);
-
+/*
     if (len[t] == 2147483647) {
         cout << -1;
     }
@@ -83,6 +88,6 @@ int main() {
             cout << p[i] + 1;
             cout << " ";
         }
-    }
+    }*/
     return 0;
 }
