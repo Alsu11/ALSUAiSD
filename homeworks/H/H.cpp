@@ -1,14 +1,6 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
-
-void check(int a [], int size) {
-    for(int i = 0; i < size; i++) {
-        cout << a[i] << " ";
-    }
-    cout << "\n";
-}
 
 int main() {
     int m;
@@ -17,7 +9,6 @@ int main() {
     int l[m]; // здесь длина
     int indx[m]; // здесь из какого числа (столбцы записываем)
     int b[m]; // это шоб вывести
-    int tabl[4][m];
     for(int i = 0 ; i < m; i++) {
         int mi;
         cin >> mi;
@@ -27,7 +18,7 @@ int main() {
     }
     l[0] = 1;
     indx[0] = -1;
-    tabl[1][0] = 1;
+    // заполняем l и a мыссивы
     for(int i = 1; i < m; i++) {
         bool f = false;
         for (int j = 0; j < i; j++) {
@@ -45,7 +36,8 @@ int main() {
         l[i]++;
     }
 
-    int max = 0; // max way
+    // находим максимальную последовательность
+    int max = 0; // max послед
     int s = 0;
     for(int i = 0; i < m; i++) {
         if(l[i] > max) {
@@ -53,6 +45,8 @@ int main() {
             s = i;
         }
     }
+
+    // узнаем элементы послед
     int d = s;
     while (true) {
         if(indx[d] == -1) {
@@ -63,22 +57,13 @@ int main() {
     }
     b[d] = 1;
 
+    // выводим индексы
     cout << max << "\n";
     for(int i = 0; i < m; i++) {
         if(b[i] == 1) {
             cout << i + 1 << " ";
         }
     }
-
-    /*cout << "\n";
-    //check(a, m);
-    cout << max;
-    cout << "\n this s = " << s << "\n";
-    check(l,m);
-    check(indx, m);
-    check(b,m);
-*/
-
 
     return 0;
 }
