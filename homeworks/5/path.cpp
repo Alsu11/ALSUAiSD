@@ -64,16 +64,15 @@ int main() {
         }
     }
 
-
-
-
-
     vector <int> p;
 
-    int i = t;
+    /*int i = t;
     while(i != s) {
         p.push_back(i);
         i = pr[i];
+    }*/
+    for(int i = t; i!=s; i = pr[i]) {
+        p.push_back(i);
     }
     p.push_back(s);
     cout << "6\n" << "3\n" << "1 2 3 4 ";
