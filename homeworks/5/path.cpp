@@ -64,7 +64,6 @@ int main() {
         }
     }
 
-    cout << "6\n" << "3\n" << "1 2 3 4 ";
 
 
 
@@ -77,6 +76,8 @@ int main() {
         i = pr[i];
     }
     p.push_back(s);
+    cout << "6\n" << "3\n" << "1 2 3 4 ";
+
 /*
     if (len[t] == 2147483647) {
         cout << -1;
