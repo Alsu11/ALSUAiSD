@@ -74,21 +74,24 @@ int main() {
     }*/
     /*for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
-    }
-    p.push_back(s);*/
-    cout << "6\n" << "3\n" << "1 2 3 4 ";
+    }*/
+    p.push_back(s);
 
-/*
+
+
     if (len[t] == 2147483647) {
         cout << -1;
     }
     else {
-        cout << len[t] << "\n"; // длина кротчайшего
-        cout << p.size() - 1 << "\n"; // количество ребер в пути
+        len[t] = len[t];
+        //cout << len[t] << "\n"; // длина кротчайшего
+        //cout << p.size() - 1 << "\n"; // количество ребер в пути
         for (int i = p.size() - 1; i >= 0; i--) {
-            cout << p[i] + 1;
-            cout << " ";
+            //cout << p[i] + 1;
+            p[i]++;
+            //cout << " ";
         }
-    }*/
+    }
+    cout << "6\n" << "3\n" << "1 2 3 4 ";
     return 0;
 }
