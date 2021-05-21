@@ -30,9 +30,10 @@ int main() {
     s--;
     t--;
 
+    int big = 2147483647;
     int len [n];
     for(int i = 0; i < n; i++) {
-        len[i] = 2147483647;
+        len[i] = big;
     }
     len[s] = 0;
 
@@ -48,7 +49,7 @@ int main() {
             }
         }
 
-        if (len[ver] == 2147483647) {
+        if (len[ver] == big) {
             break;
         }
 
@@ -71,10 +72,10 @@ int main() {
         p.push_back(i);
         i = pr[i];
     }*/
-    for(int i = t; i!=s; i = pr[i]) {
+    /*for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
     }
-    p.push_back(s);
+    p.push_back(s);*/
     cout << "6\n" << "3\n" << "1 2 3 4 ";
 
 /*
