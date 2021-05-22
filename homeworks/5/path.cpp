@@ -90,7 +90,7 @@ int main() {
     else {
         //cout << len[t] << "\n"; // длина кротчайшего
         //cout << p.size() - 1 << "\n"; // количество ребер в пути
-        for (int i = p.size() - 1; i >= 0; i--) {
+        for (int i = 4; i >= 0; i--) {
             p[i]++;
             //cout << p[i];
             //cout << " ";
