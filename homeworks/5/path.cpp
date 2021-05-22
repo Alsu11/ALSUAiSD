@@ -60,6 +60,7 @@ int main() {
             int weight = list[ver][j].weight;
             if (len[ver] + weight < len[vertex]) {
                 len[vertex] = len[ver] + weight;
+                //cout << "pfij\n";
                 pr[vertex] = ver;
             }
         }
@@ -67,31 +68,30 @@ int main() {
 
     vector <int> p;
 
-    /*int i = t;
-    while(i != s) {
+    int i = t;
+    /*while(i != s) {
         p.push_back(i);
         i = pr[i];
     }*/
-    /*for(int i = t; i!=s; i = pr[i]) {
+    for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
-    }*/
+    }
     p.push_back(s);
 
 
-
-    if (len[t] == 2147483647) {
+    if (len[t] == big) {
         cout << -1;
     }
     else {
-        len[t] = len[t];
-        //cout << len[t] << "\n"; // длина кротчайшего
-        //cout << p.size() - 1 << "\n"; // количество ребер в пути
+        cout << len[t] << "\n"; // длина кротчайшего
+        cout << p.size() - 1 << "\n"; // количество ребер в пути
         for (int i = p.size() - 1; i >= 0; i--) {
-            //cout << p[i] + 1;
             p[i]++;
-            //cout << " ";
+            cout << p[i];
+            cout << " ";
         }
+        //cout << "2\n" << "3\n" << "1 2 3 4 ";
     }
-    cout << "6\n" << "3\n" << "1 2 3 4 ";
+
     return 0;
 }
