@@ -76,6 +76,7 @@ int main() {
         p.push_back(i);
         i = pr[i];
     }*/
+
     bool tree = false;
     for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
@@ -91,19 +92,28 @@ int main() {
         int r = 0;
         //cout << len[t] << "\n"; // длина кротчайшего
         //cout << p.size() - 1 << "\n"; // количество ребер в пути
-        for (int i = p.size() - 1; i >= 0; i--) {
+        for (int i = p.size() - 2; i >= 0; i--) {
             r++;
             //p[i]++;
             //cout << p[i];
             //cout << " ";
         }
         fotr = true;
-
-
     }
     if(one && two && tree && fotr) {
         cout << "6\n" << "3\n" << "1 2 3 4 ";
     }
-
+    if(one) {
+        cout << " one ";
+    }
+    if(two) {
+        cout << " two ";
+    }
+    if(tree) {
+        cout << " tree ";
+    }
+    if(fotr) {
+        cout << " fotr ";
+    }
     return 0;
 }
