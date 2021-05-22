@@ -13,12 +13,12 @@ int main() {
     cin >> n; // вводим количество рёбер
     vector<vector<adjacency>> list;
     for (int i = 0; i < n; i++) {
-        int mi;
-        cin >> mi; // вводим степень вершины
+        int m;
+        cin >> m;
         vector<adjacency> related_tops; // вектор, где хранятся смежные данной вершине вершины
         list.push_back(related_tops);
-        for (int j = 0; j < mi; j++) {
-            adjacency a{};
+        for (int j = 0; j < m; j++) {
+            adjacency a;
             cin >> a.vertex >> a.weight; // вводим смежную вершину и длину между вершинами
             a.vertex--;
             list[i].push_back(a);
