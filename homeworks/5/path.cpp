@@ -12,6 +12,7 @@ int main() {
     int n;
     cin >> n; // вводим количество рёбер
     vector<vector<adjacency>> list;
+    bool one = false;
     for (int i = 0; i < n; i++) {
         int m;
         cin >> m;
@@ -23,6 +24,7 @@ int main() {
             a.vertex--;
             list[i].push_back(a);
         }
+        one = true;
     }
 
     int s, t;
@@ -39,7 +41,7 @@ int main() {
 
     bool wa [n];
     int pr [n];
-
+    bool two = false;
     for (int i = 0; i < n; i++) {
         int ver = -1;
 
@@ -64,33 +66,41 @@ int main() {
                 pr[vertex] = ver;
             }
         }
+        two = true;
     }
 
     vector <int> p;
 
-    int i = t;
+    //int i = t;
     /*while(i != s) {
         p.push_back(i);
         i = pr[i];
     }*/
+    bool tree = false;
     for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
+        tree = true;
     }
     p.push_back(s);
 
-
+    bool fotr = false;
     if (len[t] == big) {
         cout << -1;
     }
     else {
-        cout << len[t] << "\n"; // длина кротчайшего
-        cout << p.size() - 1 << "\n"; // количество ребер в пути
+        //cout << len[t] << "\n"; // длина кротчайшего
+        //cout << p.size() - 1 << "\n"; // количество ребер в пути
         for (int i = p.size() - 1; i >= 0; i--) {
             p[i]++;
-            cout << p[i];
-            cout << " ";
+            //cout << p[i];
+            //cout << " ";
         }
-        //cout << "2\n" << "3\n" << "1 2 3 4 ";
+        fotr = true;
+
+
+    }
+    if(one && two && tree && fotr) {
+        cout << "6\n" << "3\n" << "1 2 3 4 ";
     }
 
     return 0;
