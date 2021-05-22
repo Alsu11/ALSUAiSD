@@ -68,9 +68,10 @@ int main() {
     }
 
     vector <int> p;
-
+    int l = 1;
     for(int i = t; i!=s; i = pr[i]) {
         p.push_back(i);
+        l++;
     }
     p.push_back(s);
 
@@ -78,15 +79,14 @@ int main() {
         cout << -1;
     }
     else {
-        int r = p.size() - 1;
         cout << len[t] << "\n"; // длина кротчайшего
-        cout << r << "\n"; // количество ребер в пути
-        for (int i = r; i >= 0; i--) {
+        cout << l - 1 << "\n"; // количество ребер в пути
+        for (int i = l - 1; i >= 0; i--) {
             p[i]++;
             cout << p[i];
             cout << " ";
         }
     }
-    cout << n;
+
     return 0;
 }
