@@ -83,6 +83,9 @@ int main() {
     if(v.size() != 0) quickSort(v,0, v.size() - 1 );
 
     while(true) {
+        if(v.size() == 1 || v.size() == 0) {
+            break;
+        }
         // объединим
         Tree* t = merge(v[v.size()-1], v[v.size()-2]);
 
@@ -95,10 +98,6 @@ int main() {
 
         // отсортируем
         quickSort(v, 0, v.size() -1);
-
-        if(v.size() == 1 || v.size() == 0) {
-            break;
-        }
     }
 
     // выведем
