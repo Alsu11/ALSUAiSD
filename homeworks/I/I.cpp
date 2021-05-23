@@ -97,14 +97,16 @@ int main() {
         // отсортируем
         quickSort(v, 0, v.size() -1);
 
-        if(v.size() == 1) {
+        if(v.size() == 1 || v.size() == 0) {
             break;
         }
     }
 
     // выведем
-    Tree* full = v[0];
-    print(full, 0);
+    if(v.size() != 0) {
+        Tree* full = v[0];
+        print(full, 0);
+    }
 
     return 0;
 }
