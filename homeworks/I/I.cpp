@@ -54,14 +54,14 @@ void quickSort(vector <Tree*> &vector, int begin, int end) {
     if (i < end) quickSort(vector, i, end);
 }
 
-void print(Tree* full, int l) {
+void print_letters(Tree* full, int l) {
     if(!full) return;
     if(!full -> right && !full -> left) {
         cout << full -> letter << " " << l << "\n";
     } else {
         l++;
-        print(full -> right, l);
-        print(full -> left, l);
+        print_letters(full -> right, l);
+        print_letters(full -> left, l);
     }
 }
 
@@ -80,6 +80,7 @@ int main() {
         tree -> right = NULL;
         v.push_back(tree);
     }
+
     if(v.size() != 0) quickSort(v,0, v.size() - 1 );
 
     while(true) {
@@ -103,7 +104,7 @@ int main() {
     // выведем
     if(v.size() != 0) {
         Tree* full = v[0];
-        print(full, 0);
+        print_letters(full, 0);
     }
 
     return 0;
