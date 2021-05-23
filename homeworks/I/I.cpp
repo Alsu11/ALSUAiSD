@@ -80,8 +80,7 @@ int main() {
         tree -> right = NULL;
         v.push_back(tree);
     }
-
-    quickSort(v,0, v.size() - 1 );
+    if(v.size() != 0) quickSort(v,0, v.size() - 1 );
 
     while(true) {
         // объединим
