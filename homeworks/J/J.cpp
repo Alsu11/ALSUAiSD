@@ -3,6 +3,10 @@
 
 using namespace std;
 
+long long getC(long long c, long long e, long long n) {
+    return (c * e) % n;
+}
+
 int main() {
     long long c, e, n, l, r, ans, vm_c;
     cin >> c;
@@ -19,10 +23,10 @@ int main() {
         }
 
         // преобразуем число с
-        vm_c = (c * e2) % n;
+
+        vm_c = getC(c, e2, n);
         c = vm_c;
         cout << c;
-
 
         cin >> ans;
 
@@ -39,11 +43,8 @@ int main() {
         if(ans == 1) {
             l = (l + r) / 2;
         }
-        cout << "[" << l << "; " << r << "]\n";
+
 
     }
-
-
-
 
 }
