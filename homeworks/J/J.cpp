@@ -18,7 +18,7 @@ int main() {
     r = n;
     while (true) {
         if(l == r || r - l == 1) {
-            cout << -l;
+            cout << -r;
             break;
         }
 
