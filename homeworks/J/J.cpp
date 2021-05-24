@@ -15,7 +15,6 @@ int main() {
     long long ans;
 
     int ad;
-    cout << 277;
     cin >> ad;
     cout << 780;
     cin >> ad;
