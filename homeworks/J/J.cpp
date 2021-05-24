@@ -13,30 +13,32 @@ int main() {
     long long l,r; // правая и левая границы
     l = 0;
     r = n;
-    long long a;
     while (true) {
         if(l == r) {
-            a = l;
+            cout << -l;
             break;
         }
+
+        // преобразуем число с
+        c = (c * e2) % n;
         cout << c;
+
         long long ans;
         cin >> ans;
 
+        // если число то, то его и выводим, завершаем алгоритм
         if(ans < 0) {
-            a = l;
-            cout << -a;
+            cout << ans;
             break;
         }
 
-        long long border = (l + r) / 2;
+        // изменяем границы
         if(ans == 0) {
-            r = border;
-        } else {
-            l = border;
+            r = (l + r) / 2;
         }
-
-        c = (c * e2) % n;
+        if(ans == 1) {
+            l = (l + r) / 2;
+        }
 
     }
 }
