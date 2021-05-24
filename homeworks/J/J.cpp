@@ -1,24 +1,19 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
-long long getC(long long c, long long e, long long n) {
-    return (c * e) % n;
+long long getC(long long c, long long e2, long long n) {
+    return (c * e2) % n;
 }
 
 long long bpow(long long x, long long e) {
     long long count=1;
     if (!e) return 1;
-    while (e)
-    {
-        if (e % 2 == 0)
-        {
-            e/=2;
-            x*=x;
-        }
-        else
-        {
+    while (e) {
+        if (e % 2 == 0) {
+            e /= 2;
+            x *= x;
+        } else {
             e--;
             count*=x;
         }
@@ -43,18 +38,15 @@ int main() {
             cout << -r;
             break;
         }
+
         if(c == 0) {
             cout << c;
             break;
         }
-        // преобразуем число с
 
-        vm_c = getC(c, e2, n);
-        c = vm_c;
         cout << c << endl;
 
         cin >> ans;
-
         // изменяем границы
         if(ans == 0) {
             r = (l + r) / 2;
@@ -63,6 +55,8 @@ int main() {
             l = (l + r) / 2;
         }
 
+        // преобразуем число с
+        vm_c = getC(c, e2, n);
+        c = vm_c;
     }
-
 }
