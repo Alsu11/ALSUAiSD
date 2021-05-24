@@ -16,7 +16,7 @@ int main() {
 
     int ad;
 
-    cout << 780;
+    /*cout << 780;
     cin >> ad;
     cout << 708;
     cin >> ad;
@@ -37,7 +37,7 @@ int main() {
     cout << 1424;
     cin >> ad;
     cout << 1106;
-    cin >> ad;
+    cin >> ad;*/
     cout << -1729;
     // почемууу
 }
