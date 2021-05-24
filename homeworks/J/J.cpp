@@ -34,19 +34,14 @@ int main() {
     r = n;
 
     while (true) {
-        if(l == r || r - l == 1) {
-            cout << -r;
-            break;
-        }
-
-        if(c == 0) {
-            cout << c;
-            break;
-        }
-
         cout << c << endl;
-
         cin >> ans;
+
+        if(ans < 0) {
+            cout << ans;
+            break;
+        }
+
         // изменяем границы
         if(ans == 0) {
             r = (l + r) / 2;
@@ -56,7 +51,16 @@ int main() {
         }
 
         // преобразуем число с
-        vm_c = getC(c, e2, n);
-        c = vm_c;
+        c = getC(c, e2, n);
+
+        if(l == r || r - l == 1) {
+            cout << -r;
+            break;
+        }
+
+        if(c == 0) {
+            cout << c;
+            break;
+        }
     }
 }
