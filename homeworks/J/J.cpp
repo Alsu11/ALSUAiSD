@@ -32,6 +32,7 @@ int main() {
     cin >> e;
     cin >> n;
     long long e2 = bpow(2,e);
+
     // правая и левая границы
     l = 0;
     r = n;
@@ -42,6 +43,10 @@ int main() {
         }
         if(c == 0) {
             cout << c;
+            break;
+        }
+        if(c == n) {
+            cout << -n;
             break;
         }
         // преобразуем число с
