@@ -21,7 +21,10 @@ int main() {
             cout << -r;
             break;
         }
-
+        if(c == 0) {
+            cout << c;
+            break;
+        }
         // преобразуем число с
 
         vm_c = getC(c, e2, n);
