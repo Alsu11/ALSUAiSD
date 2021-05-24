@@ -12,13 +12,7 @@ int main() {
     cin >> c;
     cin >> e;
     cin >> n;
-    long long f = e /2;
-    int e2 = pow(2,f);
-    if(e % 2 == 1) {
-        e2 = 2 * e2;
-    }
-    e2 = 2 * e2;
-    cout << e2;
+    long long e2 = pow(2,e);
     // правая и левая границы
     l = 0;
     r = n;
