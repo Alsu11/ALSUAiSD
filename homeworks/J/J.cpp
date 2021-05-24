@@ -31,11 +31,13 @@ int main() {
     cin >> c;
     cin >> e;
     cin >> n;
+
     long long e2 = bpow(2,e);
 
     // правая и левая границы
     l = 0;
     r = n;
+
     while (true) {
         if(l == r || r - l == 1) {
             cout << -r;
@@ -45,8 +47,8 @@ int main() {
             cout << c;
             break;
         }
-        if(c == n) {
-            cout << -n;
+        if(c == n - 1) {
+            cout << -n + 1;
             break;
         }
         // преобразуем число с
@@ -71,7 +73,7 @@ int main() {
             l = (l + r) / 2;
         }
 
-
+        cout <<"[" << l << "; " << r << "]";
     }
 
 }
