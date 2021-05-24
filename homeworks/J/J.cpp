@@ -26,7 +26,7 @@ int main() {
 
         vm_c = getC(c, e2, n);
         c = vm_c;
-        cout << c;
+        cout << c << endl;
 
         cin >> ans;
 
