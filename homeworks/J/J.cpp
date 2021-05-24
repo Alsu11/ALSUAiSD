@@ -47,10 +47,6 @@ int main() {
             cout << c;
             break;
         }
-        if(c == n - 1) {
-            cout << -n + 1;
-            break;
-        }
         // преобразуем число с
 
         vm_c = getC(c, e2, n);
@@ -58,12 +54,6 @@ int main() {
         cout << c << endl;
 
         cin >> ans;
-
-        // если число то, то его и выводим, завершаем алгоритм
-        if(ans < 0) {
-            cout << ans;
-            break;
-        }
 
         // изменяем границы
         if(ans == 0) {
