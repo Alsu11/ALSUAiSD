@@ -9,7 +9,6 @@ int main() {
     cin >> e;
     cin >> n;
     int e2 = pow(2,e);
-    cout << e2;
     long long l,r; // правая и левая границы
     l = 0;
     r = n;
