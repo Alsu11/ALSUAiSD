@@ -12,7 +12,8 @@ int main() {
     cin >> c;
     cin >> e;
     cin >> n;
-    int e2 = pow(2,e);
+    int e2 = pow(2,e/2);
+    e2 = e2 * 2;
     // правая и левая границы
     l = 0;
     r = n;
