@@ -13,35 +13,7 @@ int main() {
     l = 0;
     r = n;
     long long ans;
-    /*while (true) {
-        if(l == r || r - l == 1) {
-            cout << -l;
-            break;
-        }
 
-        // преобразуем число с
-        c = (c * e2) % n;
-        cout << c;
-
-
-        cin >> ans;
-
-        // если число то, то его и выводим, завершаем алгоритм
-        if(ans < 0) {
-            cout << ans;
-            break;
-        }
-
-        // изменяем границы
-        if(ans == 0) {
-            r = (l + r) / 2;
-        }
-        if(ans == 1) {
-            l = (l + r) / 2;
-        }
-        cout << "[" << l << "; " << r << "]\n";
-
-    }*/
     int ad;
     cout << 277;
     cin >> ad;
