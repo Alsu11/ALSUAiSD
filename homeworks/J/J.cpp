@@ -2,8 +2,8 @@
 
 using namespace std;
 
-long long getC(long long c, long long e2, long long n) {
-    return (c * e2) % n;
+long long getC(long long c, long long e, long long n) {
+    return (c * e) % n;
 }
 
 long long bpow(long long x, long long e) {
@@ -11,8 +11,8 @@ long long bpow(long long x, long long e) {
     if (!e) return 1;
     while (e) {
         if (e % 2 == 0) {
-            e /= 2;
-            x *= x;
+            e/=2;
+            x*=x;
         } else {
             e--;
             count*=x;
@@ -32,35 +32,31 @@ int main() {
     // правая и левая границы
     l = 0;
     r = n;
+    if(c != n) {
+        while (true) {
+            if(l == r || r - l == 1) {
+                cout << -r;
+                break;
+            }
+            if(c == 0) {
+                cout << c;
+                break;
+            }
 
-    while (true) {
-        cout << c << endl;
-        cin >> ans;
+            // преобразуем число с
+            vm_c = getC(c, e2, n);
+            c = vm_c;
+            cout << c << endl;
 
-        if(ans < 0) {
-            cout << ans;
-            break;
-        }
+            cin >> ans;
 
-        // изменяем границы
-        if(ans == 0) {
-            r = (l + r) / 2;
-        }
-        if(ans == 1) {
-            l = (l + r) / 2;
-        }
-
-        // преобразуем число с
-        c = getC(c, e2, n);
-
-        if(l == r || r - l == 1) {
-            cout << -r;
-            break;
-        }
-
-        if(c == 0) {
-            cout << c;
-            break;
+            // изменяем границы
+            if(ans == 0) {
+                r = (l + r) / 2;
+            }
+            if(ans == 1) {
+                l = (l + r) / 2;
+            }
         }
     }
 }
