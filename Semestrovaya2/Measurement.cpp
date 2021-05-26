@@ -54,8 +54,7 @@ int main() {
     }
 
 
-    point t;
-    // ввод координат точки
+    point t; // очередной запрос
     cin >> t.x >> t.y;
     bool flag = false;
     if (t.x >= zero.x) {
