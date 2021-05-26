@@ -33,11 +33,11 @@ int main() {
     l = 0;
     r = n;
 
-    if(c < n && c >= 0) {
+    if(c < n && c > 0) {
         while (true) {
 
             if(l == r || r - l == 1) {
-                cout << -l;
+                cout << -r;
                 break;
             }
             if(c == 0) {
