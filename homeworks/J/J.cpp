@@ -32,11 +32,12 @@ int main() {
     // правая и левая границы
     l = 0;
     r = n;
+
     if(c < n && c >= 0) {
         while (true) {
 
             if(l == r || r - l == 1) {
-                cout << -r;
+                cout << -l;
                 break;
             }
             if(c == 0) {
