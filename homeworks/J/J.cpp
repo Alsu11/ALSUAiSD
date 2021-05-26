@@ -22,7 +22,7 @@ long long bpow(long long x, long long e) {
 }
 
 int main() {
-    long long c, e, n, l, r, ans, vm_c;
+    long long c, e, n, l, r, ans, vm_c, interim;
     cin >> c;
     cin >> e;
     cin >> n;
@@ -34,6 +34,7 @@ int main() {
     r = n;
     if(c < n && c >= 0) {
         while (true) {
+
             if(l == r || r - l == 1) {
                 cout << -r;
                 break;
@@ -52,10 +53,12 @@ int main() {
 
             // изменяем границы
             if(ans == 0) {
-                r = (l + r) / 2;
+                interim = (r - l) / 2;
+                r = r - interim;
             }
             if(ans == 1) {
-                l = (l + r) / 2;
+                interim = (r - l) / 2;
+                l = l + interim;
             }
         }
     }
