@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+
 /* Задача: мы хотим проверить принадлежность какой-то определенной точки
  * Какому-то выпуклому многоугольнику
  * Первой строкой вводится количество вершин мнгогоугольника (n)
@@ -7,6 +8,7 @@
  * Последней строкой вводятся координаты х и у точки, принадлежность которой мы хотим проверить
  * В качестве результата получаем сообщение в кансоли, в котором говорится, принадлежит точка или нет
  */
+
 using namespace std;
 
 struct point {
@@ -23,7 +25,7 @@ bool operator < (const an & p, const an & q) {
     return p.a * 1ll * q.b < p.b * 1ll * q.a;
 }
 
-long long sq (point & a, point & b, point & c) {
+long long sqrye (point & a, point & b, point & c) {
     return a.x*1ll*(b.y-c.y) + b.x*1ll*(c.y-a.y) + c.x*1ll*(a.y-b.y);
 }
 
@@ -43,9 +45,9 @@ int main() {
     point zero = p[zero_id];
     rotate(p.begin(), p.begin() + zero_id, p.end());
     p.erase(p.begin());
-    n--;
+    --n;
 
-    vector<an> a;
+    vector<an> a(n);
     for (int i = 0; i < n; ++i) {
         a[i].a = p[i].y - zero.y;
         a[i].b = p[i].x - zero.x;
@@ -53,32 +55,32 @@ int main() {
             a[i].b = a[i].b < 0 ? -1 : 1;
     }
 
-
-    point t;
+    point t{};
     // ввод координат точки
-    cin >> t.x >> t.y;
+    cin >> t.x;
+    cin >> t.y;
     bool flag = false;
-    if (t.x >= zero.x) {
-        if (t.x == zero.x && t.y == zero.y) flag = true;
+    if (t.x >= zero.x)
+        if (t.x == zero.x && t.y == zero.y)
+            flag = true;
         else {
-            an ann;
-            ann.a = t.y - zero.y;
-            ann.b = t.x - zero.x;
-            if (ann.a == 0) ann.b = ann.b < 0 ? -1 : 1;
-            auto iterator = upper_bound(a.begin(), a.end(), ann);
-            if (iterator == a.end() && ann.a == a[n - 1].a && ann.b == a[n - 1].b)
-                iterator = a.end() - 1;
-            if (iterator != a.end() && iterator != a.begin()) {
-                int p1 = int(iterator - a.begin());
-                if (sq(p[p1], p[p1 - 1], t) <= 0)
+            an an = {t.y - zero.y, t.x - zero.x };
+            if (an.a == 0)
+                an.b = an.b < 0 ? -1 : 1;
+            auto it = upper_bound (a.begin(), a.end(), an);
+            if (it == a.end() && an.a == a[n - 1].a && an.b == a[n - 1].b)
+                it = a.end()-1;
+            if (it != a.end() && it != a.begin()) {
+                int p1 = int (it - a.begin());
+                if (sqrye(p[p1], p[p1 - 1], t) <= 0)
                     flag = true;
             }
         }
-        if(flag) {
-            cout << "Точка " << t.x << " " << t.y << " принадлежит многоугольнику";
-        } else {
-            cout << "Точка " << t.x << " " << t.y << " не принадлежит многоугольнику";
-        }
+
+    if(flag) {
+        cout << "The point " << t.x << " " << t.y << " belongs the polygon";
+    } else {
+        cout << "The point " << t.x << " " << t.y << " not belongs the polygon";
     }
 }
 

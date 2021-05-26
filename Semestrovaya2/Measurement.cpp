@@ -23,7 +23,7 @@ bool operator < (const an & p, const an & q) {
     return p.a * 1ll * q.b < p.b * 1ll * q.a;
 }
 
-long long sq (point & a, point & b, point & c) {
+long long sqrye (point & a, point & b, point & c) {
     return a.x*1ll*(b.y-c.y) + b.x*1ll*(c.y-a.y) + c.x*1ll*(a.y-b.y);
 }
 
@@ -69,7 +69,7 @@ int main() {
                 iterator = a.end() - 1;
             if (iterator != a.end() && iterator != a.begin()) {
                 int p1 = int(iterator - a.begin());
-                if (sq(p[p1], p[p1 - 1], t) <= 0)
+                if (sqrye(p[p1], p[p1 - 1], t) <= 0)
                     flag = true;
             }
         }
