@@ -43,10 +43,12 @@ int main() {
     }
 
     point zero = p[zero_id];
+
     rotate(p.begin(), p.begin() + zero_id, p.end());
     p.erase(p.begin());
     --n;
 
+    // вычисляем угол
     vector<an> a(n);
     for (int i = 0; i < n; ++i) {
         a[i].a = p[i].y - zero.y;
@@ -56,6 +58,7 @@ int main() {
     }
 
     point t{};
+
     // ввод координат точки
     cin >> t.x;
     cin >> t.y;
