@@ -1,0 +1,45 @@
+
+entity Material {
+	id Long
+	topic String
+}
+
+entity Test {
+	id Long
+	materialId Long
+}
+
+entity Student {
+	id Long
+	firstName String
+	lastName String
+}
+
+entity Question {
+	id Long
+    question String
+    answers Set
+    points String
+    testId Long
+}
+
+entity TestsStedents {
+	id Long
+	result String
+    studentId Long
+    testId Long
+}
+
+relationship OneToMany {
+	Question{testId} to Test
+    Test{materialId} to Material
+}
+
+relationship OneToMany {
+	TestsStedents{studentId} to Student
+	TestsStedents{testId} to Test    
+}
+
+
+service all with serviceImpl
+
